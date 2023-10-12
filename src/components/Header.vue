@@ -22,7 +22,6 @@
                 <router-link to="/products" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="nav-link">Productos</router-link>
               </li>
               
-
               <!-- Megamenu-->
               <li class="nav-item dropdown position-static"><a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">Categorias</a>
                 <div class="dropdown-menu dropdown-menu-animated megamenu " style="left: auto !important;">
