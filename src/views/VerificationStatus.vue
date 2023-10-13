@@ -102,6 +102,7 @@ export default {
     methods: {
         getSale(payment_id){
             const token = localStorage.getItem('token_shopuser')
+            console.log(payment_id);
             axios.get(this.$url+'/sales/get/'+payment_id, {
                 headers: {
                     "Content-Type": 'application/json',
