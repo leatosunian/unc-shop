@@ -173,7 +173,7 @@
       margin-top: 91.38px;
     }
     .bannersCont {
-      height: calc(100vh - 91.38px);
+      height: calc(100vh - 182.76px);
     }
     .sectionTitle {
       padding-bottom:8px; 
