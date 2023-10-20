@@ -22,8 +22,8 @@
       </div>
     </section>
 
-    <div style="width: 100vw; height: 100px; background-color:black; display:flex; justify-content: center; align-items: center;">
-      <span style="color:orangered; font-size:40px; font-weight:600;">NUEVOS PRODUCTOS</span>
+    <div class="sectionTitle">
+      <span>NUEVOS PRODUCTOS</span>
     </div>
 
     <section class="pb-2 " style="margin: 70px 0">
@@ -64,8 +64,8 @@
       </div>
     </section>
 
-    <div style="width: 100vw; height: 100px; background-color:black; display:flex; justify-content: center; align-items: center;">
-      <span style="color:orangered; font-size:40px; font-weight:600;">LO MAS VENDIDO</span>
+    <div class="sectionTitle">
+      <span>LO MAS VENDIDO</span>
     </div>
     
     <section class="py-4 bg-gray-100" style="margin: 70px 0">
@@ -135,73 +135,6 @@
       </div>
     </section>
 
-   
-    
-    <section class="pt-6 pb-2" style="margin: 70px 0">
-
-
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto mb-5 text-center col-xl-8">
-            <h2 class="text-uppercase">NUESTRAS OFERTAS</h2>
-            <p class="lead text-muted">¡Descuentos exclusivos para todos nuestros clientes!</p>
-          </div>
-        </div>
-        <div class="row">
-          
-          <div class="col-lg-3 col-md-4 col-6" v-for="item in mostWantedProducts" >
-            <div class="product">
-              <div class="product-image">
-                <div class="ribbon ribbon-info" v-if="item.discount">Oferta</div>
-                <img class="img-fluid" :src="$url+'/getImage/'+item.image" alt="product"/>
-                <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
-                  <div class="product-hover-overlay-buttons"><a class="btn btn-dark btn-buy" href=""><span class="btn-buy-label ms-2">Ver más</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="py-2">
-                <p class="mb-1 text-sm text-muted">{{item.category}}</p>
-                <h3 class="mb-1 h6 text-uppercase">
-                  <a class="text-dark" href="detail.html">{{item.name}}</a>
-                </h3>
-                <span class="text-muted">{{ priceConverter(item.price) }} </span>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-      <!-- Services block-->
-      <!-- <div class="py-6 bg-gray-100 text-dark-700" style="margin: 70px 0">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 service-column">
-              <img src="/assets/shipping.gif" alt="" class="svg-icon service-icon">
-              <div class="service-text">
-                <h6 class="text-uppercase">Envíos a todo el país</h6>
-                <p class="mb-0 text-sm text-muted fw-light">Envío gratis de compras superiores a $10,000</p>
-              </div>
-            </div>
-            <div class="col-lg-4 service-column">
-              <img src="/assets/coins.gif" alt="" class="svg-icon service-icon">
-              <div class="service-text">
-                <h6 class="text-uppercase">Cambios y devoluciones</h6>
-                <p class="mb-0 text-sm text-muted fw-light">Lorem ipsum dolor sit amet consectetur</p>
-              </div>
-            </div>
-            <div class="col-lg-4 service-column">
-              <img src="/assets/person.gif" alt="" class="svg-icon service-icon">
-              <div class="service-text">
-                <h6 class="text-uppercase">223-5-423025</h6>
-                <p class="mb-0 text-sm text-muted fw-light">¡Contactanos!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </section>
-    
   </div>
 </template>
 
@@ -218,13 +151,38 @@
   .sectionFix{
     margin-top: 0px;
   }
+
+  .sectionTitle {
+    width: 100%; 
+    padding-bottom:8px; 
+    height: 100px; 
+    background-color:black; 
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .sectionTitle span {
+    color:orangered; 
+    font-size:40px; 
+    font-weight:600;
+  }
+
   @media (max-width:991px){
     .sectionFix{
       margin-top: 84px;
     }
     .bannersCont {
       height: calc(100vh - 86px);
-
+    }
+    .sectionTitle {
+      padding-bottom:8px; 
+      height: 70px; 
+      padding-bottom: 4px;
+    }
+    .sectionTitle span {
+      font-size:24px; 
+      font-weight:600;
     }
   }
 </style>
