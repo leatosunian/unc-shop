@@ -6,7 +6,7 @@
         <div class="container-fluid">  
           <!-- Navbar Header  -->
           <router-link class="navbar-brand"  style="heigth:fit-content!important;" to="/">
-            <img src="@/assets/unc.png" class="logoImg" alt="">
+            <img src="@/assets/logowhite.png" class="logoImg" alt="">
             <!-- <img src="@/assets/new-deco.png" class="logoImg" style="width:41px!important;" alt=""> -->
           </router-link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -278,8 +278,7 @@ background: right center url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http
 }
 
 .logoImg{
-  width: 55px;
-  margin-bottom: 2px;
+  width: 57px;
 }
 }
 </style>

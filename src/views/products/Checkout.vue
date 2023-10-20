@@ -118,7 +118,7 @@
                                 <h6 class="mb-0 text-uppercase">Domicilio de entrega</h6>
                             </div>
 
-                            <div v-if="addresses.length >= 1" class="addressesCont" v-for="item in addresses">
+                            <div v-if="addresses.length >= 1 && shipMethodSelected == 'toAddress' " class="addressesCont" v-for="item in addresses">
                                 <div class="">
                                     <label class="form-label" stlye="margin-bottom:0px!important;">Destinatario</label>
                                     <div style="width:fit-content; height:fit-content; border:1px solid rgba(0, 0, 0, 0.18); padding:8px 18px; border-radius: 8px; font-size:14px;">
@@ -180,7 +180,7 @@
                             <div class="" style="display:flex; justify-content:left; width:100%;" v-if="!freeShipping">
 								<div class="shipType">
                                     
-                                    <div style="border: 1px solid rgba(0, 0, 0, 0.18); border-radius: 8px; padding: 6px 10px; display: flex; align-items:center; justify-content:space-between; gap:10px;">
+                                    <div style="border: 1px solid rgba(0, 0, 0, 0.18); border-radius: 8px; padding: 6px 10px; display: flex; align-items:center;       justify-content:space-between; gap:10px;">
                                         <span>Envío a domicilio</span>
                                         <input type="radio" v-model="shippingCost" v-on:click="selectShipMethod($event)" :value="shipMethods.toAddress" name="shippingMethod" id="toAddress" style="width:18px; height:18px;">
                                     </div>
@@ -365,6 +365,7 @@ export default {
             }
             
             this.shipMethodSelected = price.target.id
+            console.log(this.shipMethodSelected);
         },
 		selectShipMethodFree(e){
 			this.shipMethodSelected = e.target.id
@@ -485,7 +486,7 @@ export default {
             this.sell.address = id.target.value
         },
         createSale(){
-            if(this.sell.address === undefined){
+            if(this.sell.address === undefined && shipMethodSelected == 'toAddress' ){
                 this.valid = false
                 this.msm_error = 'Seleccioná un domicilio de entrega'
                 return
@@ -580,6 +581,7 @@ export default {
                 }
             }).then((response) => {
                 const {data} = response
+                console.log(data);
                 this.shipMethods = data
 				if(this.total < this.shipMethods.freeShippingAmount){
 					return this.freeShipping = false
