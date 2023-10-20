@@ -170,10 +170,10 @@
 
   @media (max-width:991px){
     .sectionFix{
-      margin-top: 84px;
+      margin-top: 91.38px;
     }
     .bannersCont {
-      height: calc(100vh - 61,38px);
+      height: calc(100vh - 91.38px);
     }
     .sectionTitle {
       padding-bottom:8px; 
