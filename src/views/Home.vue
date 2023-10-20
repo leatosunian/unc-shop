@@ -39,7 +39,7 @@
           <!-- product-->
           <div class="col-lg-3 col-md-4 col-6" v-for="item in fourProducts" >
             <router-link :to="/product/+item.slug">
-              <div class="product">
+              <div >
                 <div class="product-image">
                   <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div>
                   <img class="img-fluid" :src="$url+'/getImage/'+item.image" alt="product"/>
