@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <div class="container-fluid sectionFix" >
+      <div class="container-fluid sectionFix bannersCont" >
         <div class="row bannersCont">
           <div class="col-lg-6 dark-overlay split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/banner1.jpg); background-color: #d2cecb;"> 
           <!-- <div class="col-lg-6 dark-overlay split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/backk1.jpg); background-color: #d2cecb;">  -->
@@ -163,7 +163,7 @@
   }
 
   .sectionTitle span {
-    color:orangered; 
+    color:rgb(254, 75, 0); 
     font-size:40px; 
     font-weight:600;
   }

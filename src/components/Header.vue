@@ -163,7 +163,7 @@
       <!-- bottom Bar-->
       <div class="top-bar" style="height: 35px !important;">
         <div class="container-fluid"  style="height: 38px !important;">
-          <div class="justify-content-center row d-flex align-items-center" style="height: 35px !important; background-color:red">
+          <div class="justify-content-center row d-flex align-items-center" style="height: 35px !important; background-color:rgb(254, 75, 0)">
             <span class="text-white text-uppercase" style="font-size:.83rem; font-weight:600; width:fit-content; letter-spacing:0px;">
               <span style="text-decoration:underline"> Envio gratis</span> 
                con tu compra superior a 
