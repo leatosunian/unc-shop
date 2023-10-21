@@ -40,20 +40,21 @@
           <div class="col-lg-3 col-md-4 col-6" v-for="item in fourProducts" >
             <router-link :to="/product/+item.slug">
               <div >
-                <div class="product-image">
-                  <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div>
-                  <img class="img-fluid" :src="$url+'/getImage/'+item.image" alt="product"/>
+                <div class="product-image" style="border: none !important;">
+                  <!-- <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div> -->
+                  <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+item.image" alt="product"/>
                   <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
-                    <div class="product-hover-overlay-buttons"><a class="btn btn-dark btn-buy" href=""><span class="btn-buy-label ms-2">Ver más</span></a>
+                    <div class="product-hover-overlay-buttons">
+                      <a class="btn btn-dark btn-buy" href=""><span class="btn-buy-label ms-2">{{item.name}}</span></a>
                     </div>
                   </div>
                 </div>
                 <div class="py-2">
-                  <p class="mb-1 text-sm text-muted">{{item.category}}</p>
+                  <!-- <p class="mb-1 text-sm text-muted">{{item.category}}</p> -->
                   <h3 class="mb-1 h6 text-uppercase">
-                    <a class="text-dark" href="detail.html">{{item.name}}</a>
+                    <!-- <a class="text-dark" href="detail.html">{{item.name}}</a> -->
                   </h3>
-                  <span class="text-muted">{{ priceConverter(item.price) }} </span>
+                  <!-- <span class="text-muted">{{ priceConverter(item.price) }} </span> -->
                 </div>
               </div>
             </router-link>
@@ -111,9 +112,9 @@
           <div class="col-lg-3 col-md-4 col-6" v-for="item in fourProducts" >
             <router-link :to="/product/+item.slug">
               <div class="product">
-                <div class="product-image">
+                <div class="product-image" style="border: none !important;">
                   <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div>
-                  <img class="img-fluid" :src="$url+'/getImage/'+item.image" alt="product"/>
+                  <img class="img-fluid productBorderRadius" :src="$url+'/getImage/'+item.image" alt="product"/>
                   <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
                     <div class="product-hover-overlay-buttons"><a class="btn btn-dark btn-buy" href=""><span class="btn-buy-label ms-2">Ver más</span></a>
                     </div>
@@ -224,11 +225,13 @@ export default {
         }).then((response) => {
           const {data} = response
           this.fourProducts = data
+          console.log(this.fourProducts)
           loader.hide()
         }).catch( error => {
           this.msm_error = error.response.data.msg
           loader.hide()
         })
+        
     },
     getMostWantedProducts(){
       axios.get(this.$url+'/public/getMostWantedProducts', {

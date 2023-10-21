@@ -61,6 +61,14 @@
     transition: .3s ease-in-out all !important;
 }
 
+.productBorderRadius{
+    border-radius: 9%;
+    -webkit-border-radius: 9%;
+    -moz-border-radius: 9%;
+    -ms-border-radius: 9%;
+    -o-border-radius: 9%;
+}
+
 .loginMargin{
     margin-top: 9rem;
 }
