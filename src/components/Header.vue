@@ -111,47 +111,57 @@
                             <img src="/assets/icons/cart.png" style="width: 25px;" />
                             <div class="navbar-icon-link-badge">{{cart.length}}</div>
                         </a>
-                        <div class="p-4 dropdown-menu dropdown-menu-animated dropdown-menu-end" style="height:fit-content; border:1px solid rgba(0, 0, 0, 0.1)" aria-labelledby="cartdetails">
-                            <div class="navbar-cart-product-wrapper" style="max-height:370px !important; ">
-                                <!-- cart item-->
-                                <div class="navbar-cart-product" v-for="item in cart">
-                                    <div class="d-flex align-items-center">
-                                        <a href="detail.html">
-                                          <img class="img-fluid navbar-cart-product-image" :src="$url+'/getImage/'+item.product.image" alt="..." /></a>
-                                        <div class="w-100">
-                                            <a class="navbar-cart-product-close" v-on:click="deleteItem(item._id)">
-                                              <img src="/assets/icons/close.png" style="width: 13px; height:13px;" />
-                                            </a>
-                                            <div class="ps-3">
-                                              <router-link :to="/product/+item.product.slug" class="navbar-cart-product-link " style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;" >
-                                                {{item.product.name}}
-                                              </router-link>
-                                              <small class="d-block text-muted">Cantidad: {{ item.amountOfProducts }}</small>
-                                              <small class="d-block text-muted">{{ item.product.str_variant }}: {{ item.variant.variant }} </small>
-                                              <strong class="text-sm d-block" v-if="USDEnabled == false" >{{ priceConverter(item.product.price*item.amountOfProducts*USDData.value ) }} </strong>
-                                              <strong class="text-sm d-block" v-if="USDEnabled == true" >{{ priceConverter(item.product.price*item.amountOfProducts ) }} </strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                            </div>
-                            <!-- total price-->
-                            <div class="navbar-cart-total">
-                              <span class="text-uppercase text-muted">Total</span>
-                              <strong v-if="USDEnabled == false" class="text-uppercase">{{ priceConverter(total*USDData.value) }} </strong>
-                              <strong v-if="USDEnabled == true" class="text-uppercase">{{ priceConverter(total) }} </strong>
-                            </div>
-                            <!-- buttons-->
-                            <div class="d-flex justify-content-between">
-                                <div style="display:flex; flex-direction: column; align-items:center; justify-content:center; height">
 
-                                  <router-link class="btn btn-link text-dark" to="/cart">Ver carrito</router-link>
-                                </div>
-                                  
-                                <router-link class="btn btn-outline-dark" to="/checkout">Comprar</router-link>
-                            </div>
+                        <div  class="p-4 dropdown-menu dropdown-menu-animated dropdown-menu-end" style="height:fit-content; border:1px solid rgba(0, 0, 0, 0.1); border-radius: 0 0 6px 6px" aria-labelledby="cartdetails">
+
+                          <div v-if="cart.length > 0" style="width: fit-content ; height:fit-content;">
+                            <div class="navbar-cart-product-wrapper" style="max-height:370px !important; ">
+                              <!-- cart item-->
+                              <div class="navbar-cart-product" v-for="item in cart">
+                                  <div class="d-flex align-items-center">
+                                      <a href="detail.html">
+                                        <img class="img-fluid navbar-cart-product-image" :src="$url+'/getImage/'+item.product.image" alt="..." /></a>
+                                      <div class="w-100">
+                                          <a class="navbar-cart-product-close" v-on:click="deleteItem(item._id)">
+                                            <img src="/assets/icons/close.png" style="width: 13px; height:13px;" />
+                                          </a>
+                                          <div class="ps-3">
+                                            <router-link :to="/product/+item.product.slug" class="navbar-cart-product-link " style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;" >
+                                              {{item.product.name}}
+                                            </router-link>
+                                            <small class="d-block text-muted">Cantidad: {{ item.amountOfProducts }}</small>
+                                            <small class="d-block text-muted">{{ item.product.str_variant }}: {{ item.variant.variant }} </small>
+                                            <strong class="text-sm d-block" v-if="USDEnabled == false" >{{ priceConverter(item.product.price*item.amountOfProducts*USDData.value ) }} </strong>
+                                            <strong class="text-sm d-block" v-if="USDEnabled == true" >{{ priceConverter(item.product.price*item.amountOfProducts ) }} </strong>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            
+                          </div>
+                          <!-- total price-->
+                          <div class="navbar-cart-total">
+                            <span class="text-muted">TOTAL</span>
+                            <span v-if="USDEnabled == false" style="font-weight: 800">{{ priceConverter(total*USDData.value) }} </span>
+                            <span v-if="USDEnabled == true" style="font-weight: 800">{{ priceConverter(total) }} </span>
+                          </div>
+                          <!-- buttons-->
+                          <div class="d-flex justify-content-between">
+                              <div style="display:flex; flex-direction: column; align-items:center; justify-content:center; height">
+                                <router-link class="viewCartBtn" to="/cart">Ver carrito</router-link>
+                              </div>
+                                
+                              <router-link  to="/checkout" class="cartBuyBtn" >Comprar</router-link>
+                          </div>
+                          </div>
+
+                          <div v-if="cart.length === 0" style="min-width: 230px; height: 70px; display:flex; flex-direction:column; align-items:center; justify-content:space-between;">
+                            <span style="font-size: 19px; font-weight:700">Tu carrito está vacío.</span>
+                            <router-link  to="/products" class="cartBuyBtn" >Agregar Productos</router-link>
+                          </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -178,6 +188,45 @@
 </template>
 
 <style>
+
+.viewCartBtn {
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  line-height: 1.5;
+  padding: 0.7rem 0.75rem;
+  font-size: .6875rem;
+  color: black;
+  transition: all .3s ease-in-out;
+}
+
+.viewCartBtn:hover {
+  color: rgb(250, 84, 12);
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.cartBuyBtn {
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  line-height: 1.3;
+  padding: 0.6rem 0.75rem;
+  font-size: .6875rem;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #000;
+  color:white;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+  font-weight: 600;
+}
+
+.cartBuyBtn:hover{
+  color: rgb(250, 84, 12);
+  text-decoration: none;
+  transition: all .3s ease-in-out
+}
+
 
 .mobile {
 display: none !important;
@@ -379,6 +428,7 @@ methods: {
           const subtotal = item.product.price * item.amountOfProducts
           this.total = this.total + subtotal
         }
+        console.log(this.cart);
       }).catch( error => {
         console.log(error);
       })

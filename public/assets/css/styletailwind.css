@@ -74,9 +74,9 @@
     font-size: 25px;
 }
 .catButton{
-    color: rgb(196, 196, 196);
+    color: rgb(255, 255, 255);
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.301);
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 8px;
     font-size: 13px;
     padding: 10px 20px;
@@ -84,8 +84,8 @@
 }
 
 .catButton:hover{
-    border: 1px solid rgb(255, 255, 255);
-    color: white;
+    border: 1px solid rgb(255, 93, 23);
+    color: rgb(255, 93, 23);
     transition: .3s all ease-in-out;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
