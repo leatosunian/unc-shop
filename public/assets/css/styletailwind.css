@@ -36,7 +36,7 @@
     transition: all ease-in-out .3s;
 }
 .hoverClass:hover{
-    border: 1px solid orange;
+    border: 1px solid rgb(255, 93, 23);
     transition: all ease-in-out .3s;
     -webkit-transition: all ease-in-out .3s;
     -moz-transition: all ease-in-out .3s;
@@ -117,7 +117,7 @@
 } 
 
 .btnAdd:hover {
-    color: orange !important;
+    color: rgb(255, 93, 23) !important;
     background:black !important;
     transition: .3s all ease-in-out !important;
     -webkit-transition: .3s all ease-in-out !important;

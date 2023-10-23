@@ -45,17 +45,11 @@
                   <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+item.image" alt="product"/>
                   <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
                     <div class="product-hover-overlay-buttons">
-                      <a class="btn btn-dark btn-buy" href=""><span class="btn-buy-label ms-2">{{item.name}}</span></a>
+                      <a class="btn btn-dark btn-buy" style="background-color: black; border-radius: 10px;" href=""><span class="btn-buy-label ms-2">{{item.name}}</span></a>
                     </div>
                   </div>
                 </div>
-                <div class="py-2">
-                  <!-- <p class="mb-1 text-sm text-muted">{{item.category}}</p> -->
-                  <h3 class="mb-1 h6 text-uppercase">
-                    <!-- <a class="text-dark" href="detail.html">{{item.name}}</a> -->
-                  </h3>
-                  <!-- <span class="text-muted">{{ priceConverter(item.price) }} </span> -->
-                </div>
+
               </div>
             </router-link>
           </div>
@@ -69,7 +63,7 @@
       <span>LO MAS VENDIDO</span>
     </div>
     
-    <section class="py-4 bg-gray-100" style="margin: 70px 0">
+    <section class="py-4 bg-white" style="margin: 70px 0">
       <div class="container">
         <!-- <div class="row">
           <div class="mx-auto mb-5 text-center col-xl-8">
@@ -109,14 +103,15 @@
 
         <div class="row">
           <!-- product-->
-          <div class="col-lg-3 col-md-4 col-6" v-for="item in fourProducts" >
+          <div class="col-lg-3 col-md-4 col-6" v-for="item in mostWantedProducts" >
             <router-link :to="/product/+item.slug">
-              <div class="product">
+              <div class="">
                 <div class="product-image" style="border: none !important;">
                   <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div>
                   <img class="img-fluid productBorderRadius" :src="$url+'/getImage/'+item.image" alt="product"/>
                   <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
-                    <div class="product-hover-overlay-buttons"><a class="btn btn-dark btn-buy" href=""><span class="btn-buy-label ms-2">Ver más</span></a>
+                    <div class="product-hover-overlay-buttons" >
+                      <a class="btn btn-dark btn-buy" style="background-color: black; border-radius: 10px;" href=""><span class="btn-buy-label ms-2">Ver más</span></a>
                     </div>
                   </div>
                 </div>
@@ -241,6 +236,7 @@ export default {
             }).then((response) => {
               const {data} = response
               this.mostWantedProducts = data
+              log
             }).catch( error => {
               console.log(error.response.data.msg)
               this.msm_error = error.response.data.msg

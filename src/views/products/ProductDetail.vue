@@ -16,19 +16,19 @@
                   <div class="owl-thumbs" data-slider-id="1">
 
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[0]">
-                      <img class="img-fluid" :src="$url+'/getGallery/'+gallery[0].image">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[0].image">
                     </button>
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[1]">
-                      <img class="img-fluid" :src="$url+'/getGallery/'+gallery[1].image">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[1].image">
                     </button>
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[2]">
-                      <img class="img-fluid" :src="$url+'/getGallery/'+gallery[2].image">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[2].image">
                     </button>
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[3]">
-                      <img class="img-fluid" :src="$url+'/getGallery/'+gallery[3].image">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[3].image">
                     </button>
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[4]">
-                      <img class="img-fluid" :src="$url+'/getGallery/'+gallery[4].image">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[4].image">
                     </button>
                     
                   </div>
@@ -36,8 +36,8 @@
                 <div class="col-12 col-md-10 detail-carousel">
                   <div v-if="product[0].discount" class="ribbon ribbon-primary">Oferta</div>
 
-                  <div class="owl-carousel detail-slider owl-theme owl-dots-modern" data-slider-id="1">
-                    <div class="item"  v-if="gallery[0] " >
+                  <div class="owl-carousel detail-slider owl-theme owl-dots-modern " data-slider-id="1">
+                    <div class="item "  v-if="gallery[0] " >
                       <a class="glightbox" :src="$url+'/getGallery/'+gallery[0].image" :href="$url+'/getGallery/'+gallery[0].image" data-gallery="product-gallery">
                         <img class="img-fluid" :src="$url+'/getGallery/'+gallery[0].image" alt="...">
                       </a>
@@ -148,7 +148,7 @@
                 </template>
 
                 <li class="list-inline-item">
-                  <button v-if="!addedToCart" class="mb-1 btn btn-dark btn-lg btnAdd" type="button" v-on:click="addToCart()" style="font-size:12px;">Agregar al carrito</button>
+                  <button v-if="!addedToCart" class="mb-1 btn btn-dark btn-md btnAdd" type="button" v-on:click="addToCart()" style="font-size:12px; letter-spacing: 1px; font-weight:800">AGREGAR AL CARRITO</button>
                 </li>
                 <!-- <li class="list-inline-item"><a class="mb-1 btn btn-outline-secondary" href="#"> <i class="far fa-heart me-2"></i>Add to wishlist</a></li> -->
               </ul>

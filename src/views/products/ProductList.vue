@@ -72,10 +72,10 @@
               <div class="col-xl-4 col-6" v-for="item in itemsForList">
                 <router-link :to="/product/+item.slug">
                   <div class="product">
-                    <div class="product-image">
+                    <div class="product-image" style="border: none !important;">
                       <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div>
                       <img
-                        class="img-fluid"
+                        class="img-fluid productBorderRadius"
                         :src="$url+'/getImage/'+item.image"
                         alt="product"
                       />
@@ -85,7 +85,7 @@
                           href="detail.html"
                         ></a>
                         <div class="product-hover-overlay-buttons">
-                          <a class="btn btn-dark btn-buy" href="detail.html"
+                          <a class="btn btn-dark btn-buy" style="background-color: black; border-radius: 10px;" href="detail.html"
                             ><span class="btn-buy-label ms-2">Ver más</span></a
                           >
                         </div>
@@ -318,7 +318,8 @@
           </div> -->
           
           <!-- SIZE FILTER -->
-          <div class="px-3 sidebar-block px-lg-0 me-lg-4">
+
+          <!--<div class="px-3 sidebar-block px-lg-0 me-lg-4">
             <a
               class="d-lg-none block-toggler"
               data-bs-toggle="collapse"
@@ -327,7 +328,7 @@
               aria-controls="sizeFilterMenu"
               >Filtrar por talle</a
             >
-            <!-- Size filter menu-->
+            
             <div class="expand-lg collapse" id="sizeFilterMenu">
               <h6 class="sidebar-heading d-none d-lg-block">Filtrar por talle</h6>
               <form class="mt-4 mt-lg-0" action="#">
@@ -399,7 +400,9 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div>-->
+          
+          
           <!-- COLOR FILTER -->
           <!-- <div class="px-3 sidebar-block px-lg-0 me-lg-4">
             <a
@@ -493,6 +496,10 @@
 <style>
 .product-image {
   border-bottom: 1px solid #474747 !important;
+}
+
+.block-toggler[data-bs-toggle="collapse"]::before{
+  display: none;
 }
 </style>
 
