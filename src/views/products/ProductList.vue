@@ -67,9 +67,10 @@
                 </select>
               </div>
             </header>
-            <div class="row" id="my-table">
+            <div v-if="itemsForList.length > 0" class="row" id="my-table">
+              
               <!-- product-->
-              <div class="col-xl-4 col-6" v-for="item in itemsForList">
+              <div class="col-xl-4 col-6"  v-for="item in itemsForList">
                 <router-link :to="/product/+item.slug">
                   <div class="product">
                     <div class="product-image" style="border: none !important;">
@@ -93,7 +94,7 @@
                     </div>
                     <div class="py-2">
                       <p class="mb-1 text-sm text-muted">{{item.category}}</p>
-                      <h3 class="mb-1 h6 text-uppercase" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
+                      <h3 class="mb-1 h6" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap; text-transform:uppercase;">
                         <a class="text-dark" href="detail.html">{{ item.name }} </a>
                       </h3>
                       <span class="text-muted" v-if="USDEnabled == false">{{priceConverter(item.price*USDData.value)}}</span>
@@ -103,10 +104,24 @@
                 </router-link>
               </div>
               <!-- /product-->
-              
             </div>
+
+            <div v-if="itemsForList.length === 0" class="row" style="padding: 140px 0;" id="my-table">
+              <div class="card">
+                <div class="card-body">
+                <div class="row" >
+                    <div class="text-center col-12">
+                    <h3 style="font-size:34px;">No se encontraron productos.</h3>
+                    <router-link to="/products" class="textLink" style="font-weight:600;font-size:17px;margin-left:1px!important;">Ver todos los productos</router-link>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
             <!-- Pagination-->
             <b-pagination
+              v-if="itemsForList.length > 0"
               v-model="currentPage"
               :total-rows="allProducts.length"
               :per-page="perPage"
@@ -574,6 +589,7 @@ export default {
         this.allProducts = data
         this.products = data
         console.log(this.products);
+        console.log(this.allProducts);
         this.loading = false
         if(this.$route.query.subcategory){
           this.getSubcategoryProducts()
@@ -659,6 +675,7 @@ export default {
     },
     getCategoryProducts(){
       this.allProducts = this.products.filter(item => item.category == this.$route.query.category )
+        console.log(this.allProducts);
     },
     filterBySize(e){
       this.allProducts = this.products.filter(products => products.variants.some(variant => variant.variant == e.target.value))

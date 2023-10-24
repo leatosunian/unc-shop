@@ -44,7 +44,7 @@
                   <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+item.image" alt="product"/>
                   <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
                     <div class="product-hover-overlay-buttons">
-                      <a class="btn btn-dark btn-buy" style="background-color: black; border-radius: 10px;" href=""><span class="btn-buy-label ms-2">{{item.name}}</span></a>
+                      <a class="btn btn-dark btn-buy" style="background-color: black; border-radius: 10px; padding: 12px 10px; height: fit-content; line-height: 20px;" href=""><span class="btn-buy-label ms-2">{{item.name}}</span></a>
                     </div>
                   </div>
                 </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="py-2">
                   <p class="mb-1 text-sm text-muted">{{item.category}}</p>
-                  <h3 class="mb-1 h6 text-uppercase">
+                  <h3 class="mb-1 h6" style="text-transform:uppercase;">
                     <a class="text-dark" href="detail.html">{{item.name}}</a>
                   </h3>
                   <span class="text-muted">{{ priceConverter(item.price) }} </span>

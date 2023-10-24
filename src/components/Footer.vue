@@ -60,8 +60,12 @@
                   </div>
                   <div class="col-md-6">
                     <ul class="mt-2 mb-0 text-center list-inline mt-md-0 text-md-end">
-                      <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/visa.svg" alt="..."></li>
-                      <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/mastercard.svg" alt="..."></li>
+                      <li class="list-inline-item">
+                        <img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/visa.svg" alt="...">
+                      </li>
+                      <li class="list-inline-item">
+                        <img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/sell/2-0/img/mastercard.svg" alt="...">
+                      </li>
                     </ul>
                   </div>
                 </div>

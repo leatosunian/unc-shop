@@ -75,7 +75,7 @@
                 <li class="breadcrumb-item"><router-link :to="{name: 'products', query:{category:product[0].category, subcategory:product[0].subcategory}}">{{product[0].subcategory}}</router-link></li>
                 <li class="breadcrumb-item active">{{product[0].name}}</li>
               </ul>
-              <h1 class="mb-4" style="font-size:48px;">{{product[0].name}}</h1>
+              <h1 class="mb-4 productName">{{product[0].name}}</h1>
               <div class="mb-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between">
                 <ul class="mb-2 list-inline mb-sm-0">
                   <li class="mb-0 list-inline-item h3 fw-light" v-if="USDEnabled == false">{{priceConverter(product[0].price*USDData.value)}}</li>
@@ -249,9 +249,21 @@
     border: 1px solid orange;
   }
 
+  .productName {
+    font-size:48px;
+  }
+
   .owl-theme.owl-dots-modern .owl-dots .owl-dot.active span{
     background-color: orange!important;
   }
+
+  @media (max-width:991px) {
+    .productName {
+      font-size:40px;
+    }
+  
+  }
+
 </style>
 
 <script>
