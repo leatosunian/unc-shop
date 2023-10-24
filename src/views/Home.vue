@@ -12,7 +12,7 @@
           <!-- BANNER PARCHES -->
           <router-link  to="/products?category=PARCHES#!" class="col-lg-6 dark-overlay split-screen-column align-items-start" style="background-image: url(../assets/banner2low.png); background-color: #e5b6b4; text-decoration: none"> 
           <!-- <div class="col-lg-6 split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/backk2.jpg); background-color: #e5b6b4;">  -->
-            <div class="px-lg-5 mb-lg-5 bannerTitle" >
+            <div class=" overlay-content px-lg-5 mb-lg-5 bannerTitle" >
               <h1 class=" display-4 fw-bold split-screen-heading" style="color: white;">PARCHES TEXTILES</h1>
             </div>
           </router-link>
