@@ -52,7 +52,7 @@
               </div>
             </div>
             <!-- Copyright section of the footer-->
-            <div class="text-white fw-light" style="background-color: #000000; padding-bottom:1.2rem; padding-top: .4rem;">
+            <div class="text-white fw-light" style="background-color: #000000; padding-bottom:1.2rem; padding-top: 2rem;">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="text-center col-md-6 text-md-start">
