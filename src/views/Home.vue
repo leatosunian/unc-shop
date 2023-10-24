@@ -3,27 +3,26 @@
     <section>
       <div class="container-fluid sectionFix bannersCont" >
         <div class="row bannersCont">
-          <div class="col-lg-6 dark-overlay split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/banner1.jpg); background-color: #d2cecb;"> 
-          <!-- <div class="col-lg-6 dark-overlay split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/backk1.jpg); background-color: #d2cecb;">  -->
-            <div class="py-6 mt-6 overlay-content px-lg-5 mt-lg-0 mb-lg-5" style="margin: 0 auto !important">
-              <h1 class="mb-2 text-white display-3 fw-bold split-screen-heading letter-spacing-1">STICKERS</h1>
-              <router-link to="/products?category=STICKERS#!"><button class="catButton" type="button">VER PRODUCTOS</button></router-link>
+          <!-- BANNER STICKERS -->
+          <router-link to="/products?category=STICKERS#!" class="col-lg-6 dark-overlay split-screen-column align-items-start" style="background-image: url(../assets/banner1low.png); background-color: #d2cecb; text-decoration: none"> 
+            <div class="mt-7 overlay-content px-lg-5 bannerTitle">
+              <h1 class="text-white display-4 fw-bold split-screen-heading">STICKERS</h1>
             </div>
-            
-          </div>
-          <div class="col-lg-6 split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/banner2.jpg); background-color: #e5b6b4;"> 
+          </router-link>
+          <!-- BANNER PARCHES -->
+          <router-link  to="/products?category=PARCHES#!" class="col-lg-6 dark-overlay split-screen-column align-items-start" style="background-image: url(../assets/banner2low.png); background-color: #e5b6b4; text-decoration: none"> 
           <!-- <div class="col-lg-6 split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/backk2.jpg); background-color: #e5b6b4;">  -->
-            <div class="py-6 px-lg-5 mb-lg-5" style="margin: 0 auto !important">
-              <h1 class="mb-2 display-3 fw-bold split-screen-heading letter-spacing-1" style="color: white;">PARCHES TEXTILES</h1>
-              <router-link to="/products?category=PARCHES#!"><button class="catButton" type="button">VER PRODUCTOS</button></router-link>
+            <div class="px-lg-5 mb-lg-5 bannerTitle" >
+              <h1 class=" display-4 fw-bold split-screen-heading" style="color: white;">PARCHES TEXTILES</h1>
             </div>
-          </div>
+          </router-link>
+
         </div>
       </div>
     </section>
 
     <div class="sectionTitle">
-      <span>NUEVOS PRODUCTOS</span>
+      <span>NUEVAS CAPSULAS</span>
     </div>
 
     <section class="pb-2 " style="margin: 70px 0">
@@ -164,6 +163,12 @@
     font-weight:600;
   }
 
+  .bannerTitle {
+    padding-top:170px ;
+    margin: 0 auto !important;
+
+  }
+
   @media (max-width:991px){
     .sectionFix{
       margin-top: 91.38px;
@@ -179,6 +184,9 @@
     .sectionTitle span {
       font-size:24px; 
       font-weight:600;
+    }
+    .bannerTitle {
+      padding-top:35px ;
     }
   }
 </style>
