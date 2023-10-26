@@ -45,8 +45,8 @@
                                 <a class="text-uppercase text-dark" href="detail.html"><strong>{{item.product.name}}</strong>
                                 </a>
                                 <br>
-                                <span class="text-sm text-muted">{{item.product.str_variant
-                                }}: {{item.variant.variant}}</span>
+                                <!-- <span class="text-sm text-muted">{{item.product.str_variant
+                                }}: {{item.variant.variant}}</span> -->
                               </div>
                             </div>
                           </div>
