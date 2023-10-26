@@ -17,7 +17,7 @@
           </ol>
           <!-- Hero Content-->
           <div class="pb-2 text-center hero-content">
-            <h1 class="hero-heading">Mi perfil</h1>
+            <h1 class="hero-heading categorySize">Mi perfil</h1>
           </div>
         </div>
         </section>

@@ -10,7 +10,7 @@
             </ol>
             <!-- Hero Content-->
             <div class="pb-5 text-center hero-content">
-              <h1 class="hero-heading">Pedido #{{ saleData.orderNumber }} </h1>
+              <h1 class="hero-heading categorySize">Pedido #{{ saleData.orderNumber }} </h1>
               <div class="row">
                 <div class="col-xl-8 offset-xl-2"><p class="lead text-muted">El pedido #{{ saleData.orderNumber }} abonado el {{ saleData.day }}/{{ saleData.month }}/{{ saleData.year }}, está siendo preparado. Al ser despachado en el correo, te enviaremos un código de seguimiento. Si tenés algún inconveniente con tu compra, <a href="">contactanos</a></p></div>
               </div>

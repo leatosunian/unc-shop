@@ -162,6 +162,7 @@
     font-size:40px; 
     font-weight:600;
   }
+  
 
   .bannerTitle {
     padding-top:170px ;

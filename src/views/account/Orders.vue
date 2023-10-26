@@ -10,7 +10,7 @@
                 </ol>
                 <!-- Hero Content-->
                 <div class="pb-2 text-center hero-content">
-                    <h1 class="hero-heading">Mis pedidos</h1>
+                    <h1 class="hero-heading categorySize">Mis pedidos</h1>
                     <div class="row">   
                     <div class="col-xl-8 offset-xl-2"><p class="lead">Este es el historial de tus compras</p></div>
                     </div>

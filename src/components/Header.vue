@@ -130,7 +130,7 @@
                                               {{item.product.name}}
                                             </router-link>
                                             <small class="d-block text-muted">Cantidad: {{ item.amountOfProducts }}</small>
-                                            <small class="d-block text-muted">{{ item.product.str_variant }}: {{ item.variant.variant }} </small>
+                                            <!-- <small class="d-block text-muted">{{ item.product.str_variant }}: {{ item.variant.variant }} </small> -->
                                             <strong class="text-sm d-block" v-if="USDEnabled == false" >{{ priceConverter(item.product.price*item.amountOfProducts*USDData.value ) }} </strong>
                                             <strong class="text-sm d-block" v-if="USDEnabled == true" >{{ priceConverter(item.product.price*item.amountOfProducts ) }} </strong>
                                           </div>

@@ -10,7 +10,7 @@
             </ol>
             <!-- Hero Content-->
             <div class="pb-5 text-center hero-content">
-                <h1 class="hero-heading">Resumen de compra</h1>
+                <h1 class="hero-heading categorySize">Resumen de compra</h1>
                 <div class="row">   
                     <div class="col-xl-8 offset-xl-2">
                         <p class="lead text-muted">Por favor, revisá tu orden.</p>
@@ -75,7 +75,7 @@
                                                         <router-link :to="/product/+item.product.slug" class="text-uppercase text-dark"><strong>{{item.product.name}}</strong>
                                                         </router-link>
                                                         <br>
-                                                        <span class="text-sm text-muted">{{item.product.str_variant}}: {{item.variant.variant}}</span>
+                                                        <!-- <span class="text-sm text-muted">{{item.product.str_variant}}: {{item.variant.variant}}</span> -->
                                                     </div>
                                                 </div>
                                                 </div>
@@ -426,7 +426,7 @@ export default {
                         items: item.amountOfProducts,
                         client: user,
                         product: item.product._id,
-                        variant: item.variant._id
+                        /*variant: item.variant._id*/
                     })
                 }
 

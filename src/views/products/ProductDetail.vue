@@ -86,8 +86,9 @@
                 </ul>
               </div>
               <p class="mb-4 text-muted">{{product[0].description}}</p>
+              
               <div class="row">
-                <div class="mb-3 col-sm-6 col-lg-12 detail-option">
+                <!-- <div class="mb-3 col-sm-6 col-lg-12 detail-option">
                   <h6 class="detail-option-heading"> {{ product[0].str_variant }}</h6>
                   <div style="display:flex; flex-direction:row; gap:10px;">
                     <template v-for="variant in variants" >
@@ -102,7 +103,7 @@
 
                 </div>
                 
-                <!-- <div class="mb-3 col-12 detail-option">
+                <div class="mb-3 col-12 detail-option">
                   <h6 class="detail-option-heading">Colour <span>(required)</span></h6>
                   <ul class="mb-0 list-inline colours-wrapper">
                     <li class="list-inline-item">
@@ -175,10 +176,6 @@
                       <tr>
                         <th class="text-uppercase fw-normal ">Categoría</th>
                         <td class="text-muted ">{{product[0].category}}</td>
-                      </tr>
-                      <tr>
-                        <th class="text-uppercase fw-normal ">Subcategoría</th>
-                        <td class="text-muted ">{{product[0].subcategory}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -278,7 +275,7 @@ export default {
       return {
         product: [],
         gallery: [],
-        variants: [],
+        /*variants: [],*/
         relatedProducts: [],
         cartObj: {
           amountOfProducts: 1
@@ -329,7 +326,7 @@ export default {
           const {data} = response
           this.product = data.product
           this.gallery = data.gallery
-          this.variants = data.variants
+          /*this.variants = data.variants*/
           loader.hide()
           initCarousel.initGallery()
           initCarousel.initGlight()
@@ -361,13 +358,13 @@ export default {
           this.msm_error = error.response.data.msg
         })
       },
-      getVariant(id){
+      /*getVariant(id){
         this.cartObj.variant = id
         setTimeout(() => {
           $('.hoverClass').removeClass('bgVariant')
           $('#variant_'+id).addClass('bgVariant')
         }, 40);
-      },
+      },*/
       addToCart(){
         this.addedToCart = true
         const loggedIn = localStorage.getItem('token_shopuser')
@@ -377,11 +374,11 @@ export default {
           this.msm_error = 'Iniciá sesión para comprar'
           return
         }
-        if(!this.cartObj.variant){
+        /* if(!this.cartObj.variant){
           this.valid = false
           this.addedToCart = false
           return this.msm_error = 'Selecciona un talle'
-        } 
+        } */
         const token = localStorage.getItem('token_shopuser')
         console.log(this.cartObj);
         axios.post(this.$url+'/cart/create', this.cartObj, {
@@ -392,6 +389,7 @@ export default {
         }).then((response) => {
           this.$socket.emit('sendCart', true)
           const {data} = response
+          console.log(data.msg);
           if(data.msg === 'No hay suficiente stock.'){
             this.valid = false
             this.msm_error = data.msg

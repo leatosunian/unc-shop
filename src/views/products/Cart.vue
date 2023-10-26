@@ -10,7 +10,7 @@
           </ol>
           <!-- Hero Content-->
           <div class="pb-5 text-center hero-content">
-            <h1 class="hero-heading">Carrito de compras</h1>
+            <h1 class="hero-heading categorySize">Carrito de compras</h1>
             <div class="row">   
               <div class="col-xl-8 offset-xl-2" v-if="cart.length === 0 || cart.length > 1"><p class="lead text-muted">Tenés {{cart.length}} productos en tu carrito de compras</p></div>
               <div class="col-xl-8 offset-xl-2" v-if="cart.length === 1"><p class="lead text-muted">Tenés {{cart.length}} producto en tu carrito de compras</p></div>
@@ -62,7 +62,7 @@
                                                     <router-link :to="/product/+item.product.slug" class="text-uppercase text-dark"><strong>{{item.product.name}}</strong>
                                                     </router-link>
                                                     <br>
-                                                    <span class="text-sm text-muted">{{item.product.str_variant}}: {{item.variant.variant}}</span>
+                                                    <!-- <span class="text-sm text-muted">{{item.product.str_variant}}: {{item.variant.variant}}</span> -->
                                                 </div>
                                             </div>
                                             </div>
