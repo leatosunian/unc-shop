@@ -293,7 +293,7 @@
                                         <small class="">{{ msm_error }} </small>
                                     </div>
 
-                                    <button v-if="!validSale && cart.length >= 1" type="button" class="btn btn-dark"  style="margin: 0 1.5rem;" v-on:click="createSale()">Realizar compra</button>
+                                    <button v-if="!validSale && cart.length >= 1" type="button" class="btn btn-dark btnAdd"  style="margin: 0 1.5rem; font-size:12px; letter-spacing: 1px; font-weight:800" v-on:click="createSale()">Realizar compra</button>
                                     <template v-if="validSale">
                                         <div>
                                             <div class="row">
