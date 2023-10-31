@@ -392,6 +392,7 @@ export default {
           console.log(data.msg);
           if(data.msg === 'No hay suficiente stock.'){
             this.valid = false
+            this.addedToCart = false
             this.msm_error = data.msg
             return
           }

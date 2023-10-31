@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="my-5 d-flex justify-content-between flex-column flex-lg-row">
-                            <router-link to="/products" class="btn btn-link text-muted">Continuar comprando</router-link>
+                            <router-link to="/products" class="btn btn-link" style="letter-spacing:0px!important; color: black;">Continuar comprando</router-link>
                         </div>
                         </div>
                         <div class="col-lg-4">
@@ -110,7 +110,7 @@
                                 </li>
                             </ul>
                             </div>
-                            <router-link v-if="cart.length >= 1" class="btn btn-dark" to="/checkout" style="margin: 0 1.5rem;;">Realizar compra</router-link>
+                            <router-link v-if="cart.length >= 1" class="btn btn-dark btnAdd" to="/checkout" style="margin: 0 1.5rem; font-size:12px; letter-spacing: 1px; font-weight:800;">Realizar compra</router-link>
 
                         </div>
                         </div>

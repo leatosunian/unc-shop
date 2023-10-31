@@ -182,12 +182,12 @@
                                     
                                     <div style="border: 1px solid rgba(0, 0, 0, 0.18); border-radius: 8px; padding: 6px 10px; display: flex; align-items:center;       justify-content:space-between; gap:10px;">
                                         <span>Envío a domicilio</span>
-                                        <input type="radio" v-model="shippingCost" v-on:click="selectShipMethod($event)" :value="shipMethods.toAddress" name="shippingMethod" id="toAddress" style="width:18px; height:18px;">
+                                        <input type="radio"  v-on:click="selectShipMethod($event)"  name="shippingMethod" id="toAddress" style="width:18px; height:18px;">
                                     </div>
                                     
                                     <div v-if="shipMethods.toBranch === 'Permitido'" style="border: 1px solid rgba(0, 0, 0, 0.18); border-radius: 8px; padding: 6px 10px; display: flex; align-items:center; justify-content:space-between; gap:10px;">
                                         <span>Retiro por nuestra sucursal</span>
-                                        <input type="radio" v-model="shippingCost" v-on:click="selectShipMethod($event)" value="0" name="shippingMethod" id="toBranch" style="width:18px; height:18px;">
+                                        <input type="radio"  v-on:click="selectShipMethod($event)"  name="shippingMethod" id="toBranch" style="width:18px; height:18px;">
                                     </div>
                                  
                                 </div>
@@ -349,7 +349,7 @@ export default {
         this.getCart()
         this.getAddress()
         this.validSale = false  
-        this.shipMethodSelected = 'toBranch'
+        /*this.shipMethodSelected = 'toBranch'*/
     },
     mounted(){
         window.scrollTo(0, 0)
@@ -357,13 +357,24 @@ export default {
     },
     methods: {
         selectShipMethod(price){
-            if(price.target.value == this.shippingCost){
+            /*if(price.target.value == this.shippingCost){
                 return
             } else{
                 this.shippingCost = '0'
                 this.shippingCost = price.target.value
             }            
-            this.shipMethodSelected = price.target.id
+            this.shipMethodSelected = price.target.id*/
+
+            if(price.target.id === 'toBranch'){
+                this.shippingCost = 0
+                this.shipMethodSelected = price.target.id
+            }
+            if(price.target.id === 'toAddress'){
+                this.shippingCost = this.shipMethods.toAddress
+                this.shipMethodSelected = price.target.id
+            }
+            console.log(this.shippingCost);
+            console.log(this.shipMethodSelected);
         },
 		selectShipMethodFree(e){
 			this.shipMethodSelected = e.target.id
@@ -485,11 +496,12 @@ export default {
         createSale(){
             console.log(this.sell.address);
             console.log(this.shipMethodSelected);
-            if(this.sell.address === undefined || '' && this.shipMethodSelected == 'toAddress' ){
+            if(this.sell.address === undefined && this.shipMethodSelected === 'toAddress' ){
                 this.valid = false
                 this.msm_error = 'Seleccioná un domicilio de entrega'
                 return
             }
+
             if(this.shipMethodSelected === ''){
                 this.valid = false
                 this.msm_error = 'Seleccioná un método de envío'
@@ -519,7 +531,9 @@ export default {
                 }, 2000);*/
             }).catch( error => {
                 console.log(error.response.data.msg)
-            }) 
+            })
+            
+
         },
 
         mercadoPagoPref(){
