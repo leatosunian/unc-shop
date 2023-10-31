@@ -29,7 +29,7 @@
                       <li> <router-link to="/login" class="text-white orangeHover">Iniciar Sesión</router-link></li>
                       <li> <router-link to="/login" class="text-white orangeHover">Quiero registrarme</router-link> </li>
                       <li><span v-b-modal.modal-lg-buy variant="primary" class="orangeHover" style="border:none; margin-top:0px; margin-left:0!important;" >
-                        Como comprar
+                        Cómo comprar
                       </span></li>
                       <li> <a class="text-white orangeHover" href="https://api.whatsapp.com/send?phone=5492235892260" target="_blank" >Atención al cliente</a></li>
                     </ul>
