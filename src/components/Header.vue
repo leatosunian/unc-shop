@@ -48,8 +48,6 @@
                 </div>
               </li>
 
-              <li class="nav-item"><a class="nav-link" href="" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">Contacto</a>
-              </li>
             </ul>
 
             <!-- Search Button Desktop-->

@@ -41,7 +41,7 @@
                                     <td class="py-4 align-middle" v-if="item.statusStr === 'En preparación'" ><span class="p-2 badge text-uppercase badge-info-light">En preparación</span></td>
                                     <td class="py-4 align-middle" v-if="item.statusStr === 'En camino'" ><span class="p-2 badge text-uppercase badge-warning-light">En camino</span></td>
                                     <td class="py-4 align-middle" v-if="item.statusStr === 'Recibido'" ><span class="p-2 badge text-uppercase badge-success-light">Recibido</span></td>
-                                    <td class="py-4 align-middle"><router-link class="btn btn-outline-dark btn-sm" :to="'/profile/order/'+item._id">Detalles</router-link></td>
+                                    <td class="py-4 align-middle"><router-link class="btn btn-outline-dark btn-sm btnAdd" style="font-size:11px; letter-spacing: 1px; font-weight:800" :to="'/profile/order/'+item._id">Detalles</router-link></td>
                                 </tr>
 
                             </tbody>

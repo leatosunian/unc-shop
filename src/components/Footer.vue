@@ -18,18 +18,52 @@
                   <div class="mb-3 col-lg-2 col-md-6 mb-lg-0">
                     <h6 class="mb-3 text-white text-uppercase">Shop</h6>
                     <ul class="list-unstyled">
-                      <li> <router-link to="/products?category=STICKERS#!" class="text-white" href="#">Stickers</router-link></li>
-                      <li> <router-link to="/products?category=PARCHES#!" class="text-white" href="#">Parches Textiles</router-link></li>
+                      <li> <router-link to="/products?category=STICKERS#!" class="text-white orangeHover" href="#">Stickers</router-link></li>
+                      <li> <router-link to="/products?category=PARCHES#!" class="text-white orangeHover" href="#">Parches Textiles</router-link></li>
                     </ul>
                   </div>
                   
                   <div class="mb-3 col-lg-2 col-md-6 mb-lg-0">
                     <h6 class="mb-3 text-white text-uppercase">Clientes</h6>
                     <ul class="list-unstyled">
-                      <li> <router-link to="/login" class="text-white">Iniciar Sesión</router-link></li>
-                      <li> <router-link to="/login" class="text-white">Quiero registrarme</router-link> </li>
-                      <li> <a class="text-white" href="https://api.whatsapp.com/send?phone=5492235892260" target="_blank" >Atención al cliente</a></li>
+                      <li> <router-link to="/login" class="text-white orangeHover">Iniciar Sesión</router-link></li>
+                      <li> <router-link to="/login" class="text-white orangeHover">Quiero registrarme</router-link> </li>
+                      <li><span v-b-modal.modal-lg-buy variant="primary" class="orangeHover" style="border:none; margin-top:0px; margin-left:0!important;" >
+                        Como comprar
+                      </span></li>
+                      <li> <a class="text-white orangeHover" href="https://api.whatsapp.com/send?phone=5492235892260" target="_blank" >Atención al cliente</a></li>
                     </ul>
+
+
+                  <b-modal id="modal-lg-buy" size="lg" title="Cómo comprar" >
+                    <div style="display:flex;flex-direction:column;padding:0 30px; gap:10px">
+                      <span style="font-weight:600; font-size: 18px;">
+                          - Registrate e iniciá sesión
+                          <p style="font-weight:400; font-size: 17px;">Para comprar debes ser un usuario registrado. Creá tu cuenta haciendo <router-link to="/login">click acá</router-link> y luego iniciá sesión.</p>
+                      </span>
+                      <span style="font-weight:600; font-size: 18px;">
+                          - Agregá un domicilio de entrega
+                          <p style="font-weight:400; font-size: 17px;">En las configuraciones de tu cuenta, ingresá hasta dos direcciones de envío para seleccionar al hacer tus compras.</p>
+                      </span>
+                      <span style="font-weight:600; font-size: 18px; margin-bottom: 16px;">
+                        - Agregá productos a tu carrito
+                      </span>
+                      <span style="font-weight:600; font-size: 18px;">
+                        - Realizá el pedido
+                        <p style="font-weight:400; font-size: 17px;">Elegí cómo querés que te llegue tu pedido, seleccioná tu dirección de envío que agregaste anteriormente y aboná tu compra de manera segura mediante MercadoPago.</p>
+                      </span>
+                      <span style="font-weight:600; font-size: 18px;">
+                        - Cómo sigo mi pedido?
+                        <p style="font-weight:400; font-size: 17px;">Cuando despachemos tu pedido, te enviaremos un código de seguimiento para que sigas el estado de tu compra. Éste lo podrás ver ingresando a Mis pedidos, donde en el detalle del pedido se mostrará luego de que te lo enviemos. </p>
+                      </span>
+                    </div>
+                    <template #modal-footer>
+                      <div class="">
+                        
+     
+                      </div>
+                    </template>
+                  </b-modal>
                   </div>
                   
                   <div class="col-lg-2">
@@ -38,11 +72,11 @@
                     <div style="display:flex; flex-direction:column; gap:8px">
                       <a class="text-muted text-decoration-none" href="#" target="_blank" title="Instagram">
                         <img src="/assets/instagram.png" alt="" style="width:21px; margin-right: 10px;">
-                        <span class="text-white">unc7600</span>
+                        <span class="text-white orangeHover">unc7600</span>
                       </a>
                       <a class="text-muted text-decoration-none" href="https://api.whatsapp.com/send?phone=5492235892260" target="_blank" title="Whatsapp">
                         <img src="/assets/whatsapp.png" alt="" style="width:23px; margin-right: 8px;">
-                        <span class="text-white">+54 9 223 5 892260</span>
+                        <span class="text-white orangeHover">+54 9 223 5 892260</span>
                       </a>
                     </div>
 
@@ -74,6 +108,18 @@
         </footer>
     </div>
 </template>
+
+<style>
+  .orangeHover {
+    color: white;
+    transition: .3s all ease-in-out;
+  }
+  .orangeHover:hover {
+    color: rgb(254, 75, 0) !important;
+    transition: .3s all ease-in-out;
+    text-decoration: none;
+  }
+</style>
 
 <script>
 

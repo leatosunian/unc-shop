@@ -113,12 +113,12 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <div class="block mb-3">
+                        <div class="block mb-3" v-if="addresses.length >= 1 && shipMethodSelected == 'toAddress' ">
                             <div class="block-header">
                                 <h6 class="mb-0 text-uppercase">Domicilio de entrega</h6>
                             </div>
 
-                            <div v-if="addresses.length >= 1 && shipMethodSelected == 'toAddress' " class="addressesCont" v-for="item in addresses">
+                            <div  class="addressesCont" v-for="item in addresses">
                                 <div class="">
                                     <label class="form-label" stlye="margin-bottom:0px!important;">Destinatario</label>
                                     <div style="width:fit-content; height:fit-content; border:1px solid rgba(0, 0, 0, 0.18); padding:8px 18px; border-radius: 8px; font-size:14px;">
@@ -144,7 +144,7 @@
 
                         </div>
 
-                        <router-link to="/profile/address" class="textLink">Gestionar mis domicilios de entrega</router-link>
+                        <router-link v-if="addresses.length >= 1 && shipMethodSelected == 'toAddress' " to="/profile/address" class="textLink">Gestionar mis domicilios de entrega</router-link>
 
                         <div class="block mt-5">
                             <div class="block-header">
@@ -165,7 +165,7 @@
                                     </span>
                                     <span style="font-weight:600; font-size: 18px;">
                                         - Retirá por nuestra sucursal
-                                        <p style="font-weight:400; font-size: 17px;">Podés acercarte a nuestra sucursal luego de hacer la compra y retirar tu pedido sin cargo.</p>
+                                        <p style="font-weight:400; font-size: 17px;">Si sos de Mar del Plata, podés acercarte a nuestra sucursal luego de hacer la compra y retirar tu pedido sin cargo.</p>
                                     </span>
                                   </div>
                                   <template #modal-footer>
@@ -349,27 +349,24 @@ export default {
         this.getCart()
         this.getAddress()
         this.validSale = false  
-
+        this.shipMethodSelected = 'toBranch'
     },
     mounted(){
         window.scrollTo(0, 0)
+        console.log(this.shipMethodSelected);
     },
     methods: {
         selectShipMethod(price){
-
             if(price.target.value == this.shippingCost){
                 return
             } else{
                 this.shippingCost = '0'
                 this.shippingCost = price.target.value
-            }
-            
+            }            
             this.shipMethodSelected = price.target.id
-            console.log(this.shipMethodSelected);
         },
 		selectShipMethodFree(e){
 			this.shipMethodSelected = e.target.id
-			console.log(this.shipMethodSelected);
 		},
         getCart(){          
             const token = localStorage.getItem('token_shopuser')
@@ -486,7 +483,9 @@ export default {
             this.sell.address = id.target.value
         },
         createSale(){
-            if(this.sell.address === undefined && shipMethodSelected == 'toAddress' ){
+            console.log(this.sell.address);
+            console.log(this.shipMethodSelected);
+            if(this.sell.address === undefined || '' && this.shipMethodSelected == 'toAddress' ){
                 this.valid = false
                 this.msm_error = 'Seleccioná un domicilio de entrega'
                 return
@@ -515,7 +514,6 @@ export default {
                 console.log(data)
                 this.saleID = data._id
                 this.mercadoPagoPref()
-
                 /*setTimeout(() => {
                     this.$router.push({name: 'order', params: {id:data._id}})
                 }, 2000);*/
