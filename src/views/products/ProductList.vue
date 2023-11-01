@@ -527,11 +527,11 @@ export default {
   data(){
     return {
       slider: {
-        startMin: 5000,
-        startMax: 100000,
+        startMin: 1000,
+        startMax: 10000,
         min: 0,
-        max: 100000,
-        start: 5000,
+        max: 10000,
+        start: 1000,
         step: 1
       },
       minRange: null,
