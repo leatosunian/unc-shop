@@ -85,7 +85,7 @@
                     <div class="block-header">
                       <h6 class="mb-0 text-uppercase">Datos de envío</h6>
                     </div>
-                    <div class="pt-1 block-body bg-light">
+                    <div class="pt-1 block-body bg-light" v-if="address.name " >
                       <p>
                           <strong>Destinatario</strong>: {{ address.surname }}, {{address.name}}
                         <br>
@@ -106,6 +106,14 @@
                         <br>
                       </p>
                     </div>
+
+                    <div class="pt-1 block-body bg-light" v-if="!address.name " >
+                      <p>
+                        <strong>Tipo de envío</strong>: retiro por sucursal del vendedor
+                        <br>
+                      </p>
+                    </div>
+
                   </div>
 
                 </div>
@@ -189,7 +197,9 @@ export default {
         }).then((response) => {
           const {data} = response
           console.log(data);
-          this.address = data.sale[0].address
+          if(data.sale[0].address){
+            this.address = data.sale[0].address
+          }
           this.saleData = data.sale[0]
           this.products = data.saleDetails
           loader.hide()

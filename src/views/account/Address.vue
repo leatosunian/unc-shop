@@ -85,7 +85,7 @@
 
                 <div class="mt-3 mb-4 text-center">
                  
-                  <button class="btn btn-dark" type="button" v-on:click="validate()">Agregar domicilio</button>
+                  <button class="btn btn-dark btnAdd" style="font-size:12px; letter-spacing: 1px; font-weight:800;" type="button" v-on:click="validate()">Agregar domicilio</button>
                 </div>
 
                 <div class="block">
