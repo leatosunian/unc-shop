@@ -77,7 +77,7 @@
 
                     <router-link to="/profile/address" v-if="loggedIn" class="navbar-icon-link mobile" >
                       <img src="/assets/icons/user.png" style="width: 25px;" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" />
-                      <span data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Mi perfil</span>
+                      <span data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline d-lg-none">&nbsp; Mis domicilios</span>
                     </router-link>
                     
 
@@ -85,7 +85,7 @@
                       <img src="/assets/icons/user.png" style="width: 25px;" />
                       <span class="text-sm ms-2 ms-lg-0 text-uppercase fw-bold d-none d-sm-inline dropdown-toggle" data-bs-target="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp; {{username.split(' ')[0]}}</span>
                       <div class="dropdown-menu dropdown-menu-animated" aria-labelledby="categoryDropdownMenuLink" style="left:-20px!important; bottom:45px!important; ">
-                        <router-link class="dropdown-item" style="background-color:white;" to="/profile/address">Mi perfil</router-link>
+                        <router-link class="dropdown-item" style="background-color:white;" to="/profile/address">Mis domicilios</router-link>
                         <router-link class="dropdown-item" style="background-color:white;" to="/profile/orders" >Mis pedidos</router-link>
                         <a class="dropdown-item" style="background-color:white;" v-on:click="logOut()">Cerrar Sesión</a>
                       </div>

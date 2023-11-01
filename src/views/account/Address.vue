@@ -13,11 +13,11 @@
           <ol class="breadcrumb justify-content-center">
             <li class="breadcrumb-item"><router-link to="/">Inicio</router-link></li>
             <li class="breadcrumb-item"><a >Perfil</a></li>
-            <li class="breadcrumb-item active">Mis datos</li>
+            <li class="breadcrumb-item active">Mis domicilios</li>
           </ol>
           <!-- Hero Content-->
           <div class="pb-2 text-center hero-content">
-            <h1 class="hero-heading categorySize">Mi perfil</h1>
+            <h1 class="hero-heading categorySize">Mis domicilios</h1>
           </div>
         </div>
         </section>
@@ -29,7 +29,7 @@
                 <div class="block">
                   <!-- Invoice Address-->
                   <div class="block-header">
-                    <h6 class="mb-0 text-uppercase">Datos de envío</h6>
+                    <h6 class="mb-0 text-uppercase">Agregar domicilio de envío</h6>
                   </div>
                   <div class="block-body">
                     <div class="row">

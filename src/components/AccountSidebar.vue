@@ -14,7 +14,7 @@
                             <svg class="svg-icon svg-icon-heavy me-2">
                                 <use xlink:href="#navigation-map-1"> </use>
                             </svg>
-                            Mi perfil
+                            Domicilios de envío
                         </span>
                     </router-link>
                     <router-link class="list-group-item d-flex justify-content-between align-items-center text-decoration-none" active-class="active" to="/profile/orders">

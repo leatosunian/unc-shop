@@ -77,7 +77,7 @@
                   <hr>
                   <form action="customer-orders.html" method="get">
                     <div class="mb-4">
-                      <label class="form-label" for="name">Nombre</label>
+                      <label class="form-label" for="name">Nombre y apellido</label>
                       <input class="form-control" id="name" type="text" style="border-radius: 8px;" v-model="newClient.name">
                     </div>
                     <div class="mb-4">

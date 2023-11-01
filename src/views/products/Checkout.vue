@@ -143,8 +143,16 @@
                             </div>
 
                         </div>
+                        
+                        <div v-if="addresses.length == 0 && shipMethodSelected == 'toAddress'"  class="block mb-3" style="margin-left: 1.5rem;">
+                            <h6 class="mb-4 text-uppercase" >
+                                Domicilio de entrega
+                            </h6>
+                            <h5>No tienes domicilios de entrega. </h5>
+                            <span>Agrega uno para finalizar tu pedido.</span>
+                        </div>
 
-                        <router-link v-if="addresses.length >= 1 && shipMethodSelected == 'toAddress' " to="/profile/address" class="textLink">Gestionar mis domicilios de entrega</router-link>
+                        <router-link v-if="shipMethodSelected == 'toAddress' " to="/profile/address" class="textLink">Gestionar mis domicilios de entrega</router-link>
 
                         <div class="block mt-5">
                             <div class="block-header">
@@ -161,7 +169,7 @@
                                   <div style="display:flex;flex-direction:column;padding:0 30px; gap:10px">
                                     <span style="font-weight:600; font-size: 18px;">
                                         - Envío a domicilio
-                                        <p style="font-weight:400; font-size: 17px;">Comprá y recibí tu pedido sin moverte de tu casa dentro de las 72hs hábiles. Realizamos envíos a todo el país a través de {{ shipMethods.shippingCompany }}. Cuando despachemos el pedido te enviaremos un Nº de seguimiento para que rastrees tu orden.</p>
+                                        <p style="font-weight:400; font-size: 17px;">Comprá y recibí tu pedido sin moverte de tu casa dentro de las 72hs hábiles. Realizamos envíos a todo el país a través de {{ shipMethods.shippingCompany }}. Cuando despachemos el pedido te enviaremos un Nº de seguimiento para que rastrees tu orden. Este lo podrás ver ingresando al detalle de tu pedido en la sección "Datos de envío".</p>
                                     </span>
                                     <span style="font-weight:600; font-size: 18px;">
                                         - Retirá por nuestra sucursal
