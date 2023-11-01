@@ -101,7 +101,7 @@
                             <h6 class="mb-0 text-uppercase">Resumen del pedido</h6>
                             </div>
                             <div class="pt-1 block-body bg-light">
-                            <p class="text-sm">Shipping and additional costs are calculated based on values you have entered.</p>
+                           
                             <ul class="mb-0 order-summary list-unstyled">
                                 <li class="border-0 order-summary-item">
                                     <span>Subtotal sin envío</span>
