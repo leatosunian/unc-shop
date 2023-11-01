@@ -12,7 +12,7 @@
           <div class="row">
             <div class="pt-4 order-0 col-lg-7 order-lg-1">
               <div class="row">   
-                <div class="d-none d-md-block col-md-2 pe-0">
+                <div class="d-none d-md-block col-md-2 pe-0" style="width:10%!important;">
                   <div class="owl-thumbs" data-slider-id="1">
 
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[0]">
