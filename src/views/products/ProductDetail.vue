@@ -30,7 +30,18 @@
                     <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[4]">
                       <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[4].image">
                     </button>
-                    
+                    <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[5]">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[5].image">
+                    </button>
+                    <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[6]">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[6].image">
+                    </button>
+                    <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[7]">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[7].image">
+                    </button>
+                    <button class="mb-3 owl-thumb-item detail-thumb-item" v-if="gallery[8]">
+                      <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+gallery[8].image">
+                    </button>
                   </div>
                 </div>
                 <div class="col-12 col-md-10 detail-carousel">
@@ -60,6 +71,26 @@
                     <div class="item" v-if="gallery[4] ">
                       <a class="glightbox" :src="$url+'/getGallery/'+gallery[4].image" :href="$url+'/getGallery/'+gallery[4].image" data-gallery="product-gallery">
                         <img class="img-fluid" :src="$url+'/getGallery/'+gallery[4].image" alt="...">
+                      </a>
+                    </div>
+                    <div class="item" v-if="gallery[5] ">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[5].image" :href="$url+'/getGallery/'+gallery[5].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[5].image" alt="...">
+                      </a>
+                    </div>
+                    <div class="item" v-if="gallery[6] ">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[6].image" :href="$url+'/getGallery/'+gallery[6].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[6].image" alt="...">
+                      </a>
+                    </div>
+                    <div class="item" v-if="gallery[7] ">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[7].image" :href="$url+'/getGallery/'+gallery[7].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[7].image" alt="...">
+                      </a>
+                    </div>
+                    <div class="item" v-if="gallery[8] ">
+                      <a class="glightbox" :src="$url+'/getGallery/'+gallery[8].image" :href="$url+'/getGallery/'+gallery[8].image" data-gallery="product-gallery">
+                        <img class="img-fluid" :src="$url+'/getGallery/'+gallery[8].image" alt="...">
                       </a>
                     </div>
                     
