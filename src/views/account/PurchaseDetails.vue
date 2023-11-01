@@ -196,7 +196,6 @@ export default {
             }
         }).then((response) => {
           const {data} = response
-          console.log(data);
           if(data.sale[0].address){
             this.address = data.sale[0].address
           }

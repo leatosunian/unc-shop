@@ -373,8 +373,6 @@ export default {
                 this.shippingCost = this.shipMethods.toAddress
                 this.shipMethodSelected = price.target.id
             }
-            console.log(this.shippingCost);
-            console.log(this.shipMethodSelected);
         },
 		selectShipMethodFree(e){
 			this.shipMethodSelected = e.target.id
@@ -494,8 +492,6 @@ export default {
             this.sell.address = id.target.value
         },
         createSale(){
-            console.log(this.sell.address);
-            console.log(this.shipMethodSelected);
             if(this.sell.address === undefined && this.shipMethodSelected === 'toAddress' ){
                 this.valid = false
                 this.msm_error = 'Seleccioná un domicilio de entrega'
@@ -523,7 +519,6 @@ export default {
                 const {data} = response
                 this.$socket.emit('sendCart', true)
                 this.validSale = true
-                console.log(data)
                 this.saleID = data._id
                 this.mercadoPagoPref()
                 /*setTimeout(() => {
@@ -560,8 +555,6 @@ export default {
                 metadata: { clientID:user, saleID: this.saleID },
                 auto_return: 'approved'
             }
-			console.log(data);
-            console.log(this.$MPKeyAuth)
             axios.post('https://api.mercadopago.com/checkout/preferences', data, {
                 headers: {
                     "Content-Type": 'application/json',
@@ -569,12 +562,10 @@ export default {
                 }
             }).then((response) => {
               const {data} = response
-              console.log(data);
               /* window.location.href = data.sandbox_init_point+'?ShipM='+this.shipMethodSelected*/
               this.validSale = false
               this.$socket.emit('sendCart', true)
 			  window.location.href = data.init_point
-
             }).catch( error => {
               console.log(error.response.data.msg)
             }) 
@@ -593,7 +584,6 @@ export default {
                 }
             }).then((response) => {
                 const {data} = response
-                console.log(data);
                 this.shipMethods = data
 				if(this.total < this.shipMethods.freeShippingAmount){
 					return this.freeShipping = false
@@ -620,7 +610,6 @@ export default {
                     this.USDEnabled = false
                 }
             }).catch( error => {
-                console.log(error)
                 console.log(error.response.data.msg)
             })
         },

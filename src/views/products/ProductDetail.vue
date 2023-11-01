@@ -383,7 +383,6 @@ export default {
         }).then((response) => {
           const {data} = response
           this.relatedProducts = data
-          console.log(this.relatedProducts);
         }).catch( error => {
           console.log(error.response.data.msg)
           this.msm_error = error.response.data.msg
@@ -411,7 +410,6 @@ export default {
           return this.msm_error = 'Selecciona un talle'
         } */
         const token = localStorage.getItem('token_shopuser')
-        console.log(this.cartObj);
         axios.post(this.$url+'/cart/create', this.cartObj, {
         headers: {
           "Content-Type": 'application/json',
@@ -420,7 +418,6 @@ export default {
         }).then((response) => {
           this.$socket.emit('sendCart', true)
           const {data} = response
-          console.log(data.msg);
           if(data.msg === 'No hay suficiente stock.'){
             this.valid = false
             this.addedToCart = false
@@ -452,9 +449,7 @@ export default {
           if(this.USDData.enabled === false){
             this.USDEnabled = false
           }
-          console.log(this.USDData);
         }).catch( error => {
-          console.log(error)
           console.log(error.response.data.msg)
         })
       },

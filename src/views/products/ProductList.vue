@@ -588,8 +588,6 @@ export default {
         const {data} = response
         this.allProducts = data
         this.products = data
-        console.log(this.products);
-        console.log(this.allProducts);
         this.loading = false
         if(this.$route.query.subcategory){
           this.getSubcategoryProducts()
@@ -668,22 +666,18 @@ export default {
       this.allProducts = this.products.filter(item => item.subcategory == this.$route.query.subcategory && item.category == this.$route.query.category)
     },
     redirectToCategory(category){
-      console.log(category._id);
       this.activeCat = category._id
       this.$router.push({path: '/products', query:{ category: category.name} })
       this.getCategoryProducts()
     },
     getCategoryProducts(){
       this.allProducts = this.products.filter(item => item.category == this.$route.query.category )
-        console.log(this.allProducts);
     },
     filterBySize(e){
       this.allProducts = this.products.filter(products => products.variants.some(variant => variant.variant == e.target.value))
     },
     filterBySearch(){
       this.allProducts = this.products.filter(product => product.name.toLowerCase().includes(this.$route.query.filter.toLowerCase())) 
-      console.log(this.$route);
-      console.log(this.allProducts);
     },
     getUSDSettings(){
       axios.get(`${this.$url}/public/getusdsettings`, {
@@ -698,7 +692,6 @@ export default {
         if(this.USDData.enabled === false){
           this.USDEnabled = false
         }
-        console.log(this.USDData);
       }).catch( error => {
         console.log(error)
         console.log(error.response.data.msg)

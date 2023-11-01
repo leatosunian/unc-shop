@@ -234,9 +234,7 @@ export default {
                 if(this.USDData.enabled === false){
                     this.USDEnabled = false
                 }
-                console.log(this.USDData);
             }).catch( error => {
-                console.log(error)
                 console.log(error.response.data.msg)
             })
         },

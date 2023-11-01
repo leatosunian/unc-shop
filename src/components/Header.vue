@@ -426,7 +426,6 @@ methods: {
           const subtotal = item.product.price * item.amountOfProducts
           this.total = this.total + subtotal
         }
-        console.log(this.cart);
       }).catch( error => {
         console.log(error);
       })
@@ -478,7 +477,6 @@ methods: {
           this.USDEnabled = false
         }
       }).catch( error => {
-        console.log(error)
         console.log(error.response.data.msg)
       })
     },

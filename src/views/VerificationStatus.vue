@@ -102,7 +102,6 @@ export default {
     methods: {
         getSale(payment_id){
             const token = localStorage.getItem('token_shopuser')
-            console.log(payment_id);
             axios.get(this.$url+'/sales/get/'+payment_id, {
                 headers: {
                     "Content-Type": 'application/json',
@@ -110,7 +109,6 @@ export default {
                 }
             }).then((response) => {
               const {data} = response
-              console.log(data)
               setTimeout(() => {
                 this.$router.push({name: 'order', params: {id:data[0]._id}})
               }, 3000);

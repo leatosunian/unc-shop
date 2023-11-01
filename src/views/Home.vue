@@ -229,7 +229,6 @@ export default {
         }).then((response) => {
           const {data} = response
           this.fourProducts = data
-          console.log(this.fourProducts)
           loader.hide()
         }).catch( error => {
           this.msm_error = error.response.data.msg
