@@ -10,10 +10,10 @@
             </div>
           </router-link>
           <!-- BANNER PARCHES -->
-          <router-link  to="/products?category=PARCHES#!" class="col-lg-6 dark-overlay split-screen-column align-items-start" style="background-image: url(../assets/banner2low.png); background-color: #e5b6b4; text-decoration: none"> 
+          <router-link  to="/products?category=POSTERS#!" class="col-lg-6 dark-overlay split-screen-column align-items-start" style="background-image: url(../assets/banner2low.png); background-color: #e5b6b4; text-decoration: none"> 
           <!-- <div class="col-lg-6 split-screen-column align-items-center align-items-lg-end" style="background-image: url(../assets/backk2.jpg); background-color: #e5b6b4;">  -->
             <div class=" overlay-content px-lg-5 mb-lg-5 bannerTitle" >
-              <h1 class=" display-4 fw-bold split-screen-heading" style="color: white;">PARCHES TEXTILES</h1>
+              <h1 class=" display-4 fw-bold split-screen-heading" style="color: white;">POSTERS</h1>
             </div>
           </router-link>
 
@@ -42,7 +42,7 @@
                 <div class="product-image" style="border: none !important;">
                   <!-- <div class="ribbon ribbon-info" v-if="item.discount">En oferta</div> -->
                   <img class="img-fluid productBorderRadius" :src="$url+'/getGallery/'+item.image" alt="product"/>
-                  <div class="product-hover-overlay"><a class="product-hover-overlay-link" href="detail.html"></a>
+                  <div class="product-hover-overlay"><a class="product-hover-overlay-link" href=""></a>
                     <div class="product-hover-overlay-buttons">
                       <a class="btn btn-dark btn-buy" style="background-color: black; border-radius: 10px; padding: 12px 10px; height: fit-content; line-height: 20px;" href=""><span class="btn-buy-label ms-2">{{item.name}}</span></a>
                     </div>
